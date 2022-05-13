@@ -1,6 +1,7 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/diary'
 
 class DailyDiary < Sinatra::Base
   configure :development do
@@ -12,10 +13,7 @@ class DailyDiary < Sinatra::Base
   end
 
   get '/diary' do
-    entries =[ "Today I fell in a pond",
-      "Today I ate a magpie egg",
-      "Today I went postal"
-    ]
+    @diary = Diary.all
 
     erb :'diary'
 
