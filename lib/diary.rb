@@ -1,9 +1,10 @@
+require 'pg'
+
 class Diary
   def self.all
-    [
-      "Today I fell in a pond",
-      "Today I ate a magpie egg",
-      "Today I went postal"
-    ]
+    connection = PG.connect(dbname: 'daily_diary')
+    result = connection.exec("SELECT * FROM diary;")
+    result.map do |entry| entry['contents']
+    end 
   end
 end 

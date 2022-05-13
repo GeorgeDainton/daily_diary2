@@ -2,7 +2,7 @@ require 'diary'
 
 describe Diary do
   describe '.all' do
-    it 'returns all entry titles' do
+    it 'returns all entry contents' do
       entries = Diary.all
 
       expect(entries).to include("Today I fell in a pond")

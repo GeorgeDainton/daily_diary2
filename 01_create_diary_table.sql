@@ -1,0 +1,1 @@
+CREATE TABLE diary(id SERIAL PRIMARY KEY, name TEXT, contents TEXT);
